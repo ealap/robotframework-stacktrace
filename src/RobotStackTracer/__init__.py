@@ -106,7 +106,7 @@ class RobotStackTracer:
                 attrs["args"],
             )
         )
-        if attrs["kwname"] in muting_keywords:
+        if attrs["kwname"] in muting_keywords or attrs["type"] == "TRY":
             self.mutings.append(attrs["kwname"])
         self.new_error = True
 
